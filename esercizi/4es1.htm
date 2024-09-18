@@ -20,12 +20,20 @@
             font-size: 16px;
             cursor: pointer;
         }
+
+        #oddoreven {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            padding: 5px;
+        }
     </style>
 </head>
 <body>
     <h1>Generatore di Numeri Casuali</h1>
     <button id="generate-button">Genera Numero Casuale</button>
     <div id="numbers"></div>
+    <div id="oddoreven"></div>
 
     <script>
         // Funzione per generare un numero casuale tra 1 e 100
@@ -36,7 +44,18 @@
         // Funzione per aggiornare il contenuto della pagina
         function updateNumbers() {
             const numbersDiv = document.getElementById('numbers');
+            const oddorevenDiv = document.getElementById('oddoreven');
             const randomNumber = getRandomNumber();
+            let pariodispari
+            if(randomNumber%2 == 0) {
+                pariodispari= "pari"
+            }
+
+            else {
+                pariodispari= "dispari"
+            }
+
+            oddorevenDiv.textContent= 'il numero è ' + pariodispari
             numbersDiv.textContent = `Numero Casuale: ${randomNumber}`;
         }
 
