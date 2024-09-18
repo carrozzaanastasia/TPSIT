@@ -60,16 +60,19 @@
                 pariodispari= "dispari"
             }
 
+
+            oddorevenDiv.textContent= 'il numero è ' + pariodispari
+            numbersDiv.textContent = `Numero Casuale: ${randomNumber}`;
+            
             if(isPrime(randomNumber)==true) {
                 oddorevenDiv.innerHTML += "<br><br>Il numero è primo";
+                console.log("primo")
             }
 
             else {
                 oddorevenDiv.innerHTML += "<br><br>Il numero non è primo";
+                console.log("non primo")
             }
-
-            oddorevenDiv.textContent= 'il numero è ' + pariodispari
-            numbersDiv.textContent = `Numero Casuale: ${randomNumber}`;
         }
 
         function isPrime(num) {
