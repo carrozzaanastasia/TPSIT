@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array in Box Div</title>
+    <style>
+        .box {
+            border: 1px solid red;
+            padding: 10px;
+            margin: 5px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="container">
+
+        esempio di stampa di un array in quadrati div nell'html
+    </div>
+
+    <input id="name" placeholder="inserisci">
+
+    <button onclick="funzioneBottone()">Clicca Qui</button>
+
+<script>
+
+function generatePrimes(limit) {
+    const primes = [];
+   
+    for (let i = 2; i <= limit; i++) {
+        if (isPrime(i)) {
+            primes.push(i);
+        }
+    }
+   
+    return primes;
+}
+
+function funzioneBottone() {
+
+var Input = document.getElementById("name").value
+
+console.log(generatePrimes(Input))
+
+}
+
+function isPrime(num) { // returns boolean
+  if (num <= 1) return false; // negatives
+  if (num % 2 == 0 && num > 2) return false; // even numbers
+  const s = Math.sqrt(num); // store the square to loop faster
+  for(let i = 3; i <= s; i += 2) { // start from 3, stop at the square, increment in twos
+      if(num % i === 0) return false; // modulo shows a divisor was found
+  }
+  return true;
+}
+
+
+</script>
+   
+</body>
+</html>
